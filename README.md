@@ -1,61 +1,41 @@
-# 📊 RadarData Dashboard — Análise de Acidentes de Trânsito com Python
+# Radar Data — Traffic Accident EDA Prototype
 
-Projeto focado em explorar, visualizar e comunicar insights a partir de dados públicos de acidentes de trânsito. Aplicação ideal para contextos de **segurança viária, logística, policiamento e educação pública**.
+**Python · Pandas · Matplotlib · Seaborn · Jupyter**
 
----
+A small exploratory notebook for grouping and visualizing traffic-accident records by **Brazilian state (UF)**, **hour of day**, and **vehicle type**.
 
-## 🔍 Descrição
+This repository is an **early data-analysis prototype**, not a deployed interactive dashboard or a completed study of official PRF datasets.
 
-Neste projeto, utilizo dados públicos (PRF, DENATRAN, IBGE) para identificar padrões de acidentes no Brasil, com foco em:
+## Implemented
 
-- Horário e local de maior incidência
-- Tipos de veículos e condições ambientais
-- Análises comparativas por estado, região e ano
+The notebook [`radar_analysis.ipynb`](radar_analysis.ipynb) currently:
 
----
+- Reads a semicolon-delimited CSV using Latin-1 encoding.
+- Displays descriptive information about the data.
+- Plots accident counts by `uf`, `horario`, and `veiculo`.
+- Prints total records and the three most frequent state labels.
 
-## ⚙️ Tecnologias e Ferramentas
+## Dataset and reproducibility
 
-- Python (Pandas, Matplotlib, Seaborn)
-- Jupyter Notebook
-- Power BI ou Streamlit (interface interativa)
-- Git e GitHub (versionamento e publicação)
+The notebook expects a CSV at **`../data/acidentes_exemplo.csv`** relative to its execution directory, containing at least the columns:
 
----
+| uf | horario | veiculo |
+| --- | --- | --- |
+| RS | 8 | Automóvel |
+| SC | 14 | Motocicleta |
 
-## 🧠 Funcionalidades
+The two rows above are **illustrative examples, not observed accidents**. The input CSV is **not included** in this GitHub repository. The executed notebook contains output from a small example dataset; it is **not** evidence of a national accident survey.
 
-- 📍 Mapas de calor por localidade e período
-- 📊 Gráficos comparativos por categoria de acidente
-- 🕒 Análises por turno, dia da semana e mês
-- 📈 Dashboards interativos para tomada de decisão
+To run this notebook, supply your own authorized dataset with those fields, adapt the path as necessary, install `pandas`, `matplotlib`, `seaborn`, and `jupyter`, and execute the cells.
 
----
+## Planned improvements
 
-## 🚀 Aplicações reais
+1. Include a clearly labeled synthetic example CSV and make file paths relative to the repository.
+2. Add an import/validation pipeline for documented public datasets, including source, period, and schema.
+3. Add reproducible tests for data cleaning and aggregation.
+4. Implement interactive filtering and maps only after the dataset pipeline is validated.
+5. Publish reproducible figures, limitations and a concise results report.
 
-- Segurança pública e planejamento tático
-- Transportadoras e roteirização
-- Seguradoras e análise de risco
-- Campanhas educativas e políticas públicas
+## Author
 
----
-
-## 📎 Autor
-
-**José Antônio Coutinho de Moraes Filho**  
-Cientista de Dados | IA Generativa | NLP | Python | PRF & FAB  
-[LinkedIn](https://linkedin.com/in/joseantoniomoraes) • [GitHub](https://github.com/antoniomoraes85)
-
----
-
-## 🌍 English Summary
-
-This project explores traffic accident data using Python, generating dashboards to support decision-making in **public safety, logistics and risk analysis**.
-
-Includes:
-- Heatmaps and time-based insights
-- Interactive dashboards
-- Public data from Brazilian traffic agencies
-
-Let's turn real-world data into real impact.
+José Antônio Coutinho de Moraes Filho · [GitHub](https://github.com/antoniomoraes85) · [LinkedIn](https://www.linkedin.com/in/joseantoniomoraes/)
